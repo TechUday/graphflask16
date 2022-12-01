@@ -1,0 +1,66 @@
+{% extends "base.html" %} {% block content %}
+
+
+<div class="container">
+    <h1>COVID-19 Spread Analysis</h1>
+  <div class="row">
+
+    <div class="col-4">
+        <h5><font color="red">Dynamic Dashboard</font></h5>
+        <p>This is the dynamic dashboard which provides the increase of covid cases</p>
+        <table class="table-responsive-sm table-dark">
+        <thead>
+            <tr>
+            <th scope="col">Worldmap</th>
+            <th scope="col">with graphs</tr>
+                </tr>
+        </thead>
+        <tbody>
+    {% for pair in pairs %}
+    <tr>
+    <td>{{ pair[0]}}</td>
+    <td>{{ pair[1]}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+    </table></div>
+    <div class="col-8">
+        <h5><font color="firebrick">world map of corona cases with a bar graph and line plot to show the increase of corona virus across the world.</font></h5>
+<!--        <p>using the same data we provided an updated map that contains</p>-->
+<!--        {{cmap|safe}}</div>-->
+
+        <div class='tableauPlaceholder' id='viz1669711346530' style='position: relative'><noscript><a href='#'><img alt='Covid-19 Timeline Series ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;co&#47;covidtimelineseriesdat&#47;Dashboard2&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='covidtimelineseriesdat&#47;Dashboard2' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;co&#47;covidtimelineseriesdat&#47;Dashboard2&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1669711346530');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.minWidth='420px';vizElement.style.maxWidth='1800px';vizElement.style.width='100%';vizElement.style.minHeight='587px';vizElement.style.maxHeight='887px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.minWidth='420px';vizElement.style.maxWidth='1800px';vizElement.style.width='100%';vizElement.style.minHeight='587px';vizElement.style.maxHeight='887px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='1127px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+
+
+  </div>
+
+      <a href='/home'>
+        <button class="GFG">
+            graph1
+        </button>
+    </a>
+    <a href='/gra'>
+        <button class="GFG">
+            graph2
+        </button>
+    </a>
+    <a href='/graph'>
+        <button class="GFG">
+            graph3
+        </button>
+    </a>
+
+    <a href='/ray'>
+        <button class="GFG">
+            prediction
+        </button>
+    </a>
+    <a href='/newgra'>
+        <button class="GFG">
+            plotly
+        </button>
+    </a>
+</div>
+
+
+{% endblock %}

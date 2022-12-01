@@ -1,0 +1,75 @@
+{% extends "base.html" %} {% block content %}
+
+
+<div class="container">
+    <h1>COVID-19 Spread Analysis</h1>
+  <div class="row">
+
+    <div class="col-4">
+        <h5><font color="red">Indian States</font></h5>
+        <p>This is the province state wise covid-19 data upto 20 july 2020.</p>
+        <table class="table-responsive-sm table-dark">
+        <thead>
+            <tr>
+            <th scope="col">Plotly Graphs</th>
+            <th scope="col">& Insights</tr>
+                </tr>
+        </thead>
+        <tbody>
+    {% for pair in pairs %}
+    <tr>
+    <td>{{ pair[0]}}</td>
+    <td>{{ pair[1]}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+    </table></div>
+    <div class="col-8">
+        <h5><font color="firebrick">Integrated some plotly interactive graphs to our website inorder to make best experience to the end user and to provide some Insights.</font></h5>
+<!--        <p>using the same data we provided an updated map that contains</p>-->
+<!--        {{cmap|safe}}</div>-->
+
+        <iframe src="/1" title="description" height="500" width="800"></iframe><br>
+        <p>Maharastra and kerala have most of the covid cases.</p><br>
+
+        <iframe src="/2" title="description" height="500" width="800"></iframe><br>
+        <p>During the month of march 15 there is a rapid increase of covid-19.</p><br>
+
+        <iframe src="/4" title="description" height="500" width="800"></iframe><br>
+        <p>Covid-19 is rapidly spreading in Wuhan and South Korea. </p><br>
+
+        <iframe src="/5" title="description" height="500" width="800"></iframe><br>
+        <p>Though the confirmed cases are rapidly increasing most of the people are getting recovered.</p><br>
+
+
+
+  </div>
+      <a href='/home'>
+        <button class="GFG">
+            graph1
+        </button>
+    </a>
+    <a href='/gra'>
+        <button class="GFG">
+            graph2
+        </button>
+    </a>
+    <a href='/graph'>
+        <button class="GFG">
+            graph3
+        </button>
+    </a>
+    <a href='/dash'>
+        <button class="GFG">
+            dashboard
+        </button>
+    </a>
+    <a href='/ray'>
+        <button class="GFG">
+            prediction
+        </button>
+    </a>
+</div>
+
+
+{% endblock %}

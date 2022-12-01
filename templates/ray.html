@@ -1,0 +1,89 @@
+{% extends "base1.html" %} {% block content %}
+
+
+<div class="container">
+    <h1>COVID-19 Spread Analysis</h1>
+  <div class="row">
+
+    <div class="col-4">
+        <h5><font color="red">Model Prediction</font></h5>
+        <p>This model will predict either you have affected with covid or not.</p>
+        <table class="table-responsive-sm table-dark">
+        <thead>
+            <tr>
+            <th scope="col">My Deep Learning</th>
+            <th scope="col">Model</tr>
+                </tr>
+        </thead>
+        <tbody>
+    {% for pair in pairs %}
+    <tr>
+    <td>{{ pair[0]}}</td>
+    <td>{{ pair[1]}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+    </table></div>
+    <div class="col-8">
+        <h5><font color="firebrick">At the backend of this my trained deep learning model will run to predict covid based on the uploaded x-ray.</font></h5>
+<!--        <p>using the same data we provided an updated map that contains</p>-->
+<!--        {{cmap|safe}}</div>-->
+
+
+<form id="upload-file" method="post" enctype="multipart/form-data">
+        <label for="imageUpload" class="upload-label">
+            Choose...
+        </label>
+        <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
+    </form>
+
+    <div class="image-section" style="display:none;">
+        <div class="img-preview">
+            <div id="imagePreview">
+            </div>
+        </div>
+        <div>
+            <button type="button" class="btn btn-primary btn-lg " id="btn-predict">Predict!</button>
+        </div>
+    </div>
+
+    <div class="loader" style="display:none;"></div>
+
+    <h3 id="result">
+        <span> </span>
+    </h3>
+
+
+
+  </div>
+      <a href='/home'>
+        <button class="GFG">
+            graph1
+        </button>
+    </a>
+
+
+    <a href='/gra'>
+        <button class="GFG">
+            graph2
+        </button>
+    </a>
+    <a href='/graph'>
+        <button class="GFG">
+            graph3
+        </button>
+    </a>
+    <a href='/dash'>
+        <button class="GFG">
+            dashboard
+        </button>
+    </a>
+      <a href='/newgra'>
+        <button class="GFG">
+            plotly
+        </button>
+    </a>
+</div>
+
+
+{% endblock %}
